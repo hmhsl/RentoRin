@@ -7,34 +7,41 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
+
+  <!-- Floating Hearts Background -->
   <div class="hearts">
-  <div class="heart small slow"></div>
-  <div class="heart medium fast"></div>
-  <div class="heart tiny slow"></div>
-  <div class="heart large medium"></div>
-  <div class="heart medium slow"></div>
-  <div class="heart small fast"></div>
-  <div class="heart tiny medium"></div>
-</div>
-  <div class="music-player">
-  <div class="now-playing">🎵 Now Playing: Our Song</div>
-
-  <audio id="love-song" src="music/firstlove.mp3"></audio>
-
-  <div class="controls">
-    <button id="play-pause-button" onclick="togglePlayPause()">▶️</button>
-    <button onclick="stopSong()">⏹️</button>
+    <div class="heart small slow"></div>
+    <div class="heart medium fast"></div>
+    <div class="heart tiny slow"></div>
+    <div class="heart large medium"></div>
+    <div class="heart medium slow"></div>
+    <div class="heart small fast"></div>
+    <div class="heart tiny medium"></div>
   </div>
 
-  <input type="range" id="progress" value="0" max="100">
+  <!-- Dark Mode Toggle Button -->
+  <button class="dark-mode-button" onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
 
-  <div class="music-note" id="music-note">🎶</div>
-</div>
+  <!-- Music Player -->
+  <div class="music-player">
+    <div class="now-playing">🎵 Now Playing: Our Song</div>
 
-  <input type="range" id="progress" value="0" max="100">
-</div>
-  <div class="container">
+    <audio id="love-song" src="music/your-song.mp3" loop></audio>
+
+    <div class="controls">
+      <button id="play-pause-button" onclick="togglePlayPause()">▶️</button>
+      <button onclick="stopSong()">⏹️</button>
+    </div>
+
+    <input type="range" id="progress" value="0" max="100">
+
+    <div class="music-note" id="music-note">🎶</div>
+  </div>
+
+  <!-- Main Content Container -->
+  <div class="container fade-in">
     <header>
       <h1>Happy 1-Year Anniversary!</h1>
       <p>To the most amazing girl in the world</p>
@@ -42,10 +49,21 @@
 
     <main>
       <section class="intro">
-        <p>Though we’re far apart, this site is my love letter to you filled with all our memories, my favorite things about you, and the cutest little facts about us.</p>
-        <p>This past year with you was filled with so much adventure, laughs, and love. Let's keep making more memories🦮🐈.</p>
+        <p>Though we’re far apart, this little site is my love letter to you—filled with our memories, favorite things, and fun facts about us. ❤️</p>
       </section>
 
+      <!-- Photo Album Section -->
+      <section class="photo-album">
+        <h2>Our Favorite Memories 📸</h2>
+        <div class="album-grid">
+          <img src="images/photo1.jpg" alt="Memory 1">
+          <img src="images/photo2.jpg" alt="Memory 2">
+          <img src="images/photo3.jpg" alt="Memory 3">
+          <img src="images/photo4.jpg" alt="Memory 4">
+        </div>
+      </section>
+
+      <!-- Navigation Buttons -->
       <nav class="nav-buttons">
         <a href="logbook.html">Date Logbook</a>
         <a href="favorites.html">My Favorite Things</a>
@@ -56,48 +74,64 @@
     </main>
 
     <footer>
-      <p>Made with love by Laurent</p>
+      <p>Made with love by Laurent 💕</p>
     </footer>
   </div>
-<script>
-const song = document.getElementById('love-song');
-const progress = document.getElementById('progress');
-const playPauseButton = document.getElementById('play-pause-button');
-const musicNote = document.getElementById('music-note');
 
-function togglePlayPause() {
-  if (song.paused) {
-    song.play();
-    playPauseButton.innerHTML = '⏸️'; // Change to pause icon
-    musicNote.style.opacity = '1'; // Show the floating note
-  } else {
-    song.pause();
-    playPauseButton.innerHTML = '▶️'; // Change back to play icon
-    musicNote.style.opacity = '0'; // Hide the floating note
-  }
-}
+  <!-- JavaScript Section -->
+  <script>
+    const song = document.getElementById('love-song');
+    const progress = document.getElementById('progress');
+    const playPauseButton = document.getElementById('play-pause-button');
+    const musicNote = document.getElementById('music-note');
 
-function stopSong() {
-  song.pause();
-  song.currentTime = 0;
-  playPauseButton.innerHTML = '▶️'; // Reset to play icon
-  musicNote.style.opacity = '0'; // Hide the floating note
-}
+    function togglePlayPause() {
+      if (song.paused) {
+        song.play();
+        playPauseButton.innerHTML = '⏸️'; // Pause icon
+        musicNote.style.opacity = '1';    // Show note
+      } else {
+        song.pause();
+        playPauseButton.innerHTML = '▶️'; // Play icon
+        musicNote.style.opacity = '0';    // Hide note
+      }
+    }
 
-song.addEventListener('timeupdate', () => {
-  const percentage = (song.currentTime / song.duration) * 100;
-  progress.value = percentage;
-});
+    function stopSong() {
+      song.pause();
+      song.currentTime = 0;
+      playPauseButton.innerHTML = '▶️'; // Reset Play icon
+      musicNote.style.opacity = '0';     // Hide note
+    }
 
-progress.addEventListener('input', () => {
-  const seekTime = (progress.value / 100) * song.duration;
-  song.currentTime = seekTime;
-});
+    song.addEventListener('timeupdate', () => {
+      const percentage = (song.currentTime / song.duration) * 100;
+      progress.value = percentage;
+    });
 
-song.addEventListener('ended', () => {
-  playPauseButton.innerHTML = '▶️'; // Reset button when song ends
-  musicNote.style.opacity = '0'; // Hide the note
-});
-</script>
+    progress.addEventListener('input', () => {
+      const seekTime = (progress.value / 100) * song.duration;
+      song.currentTime = seekTime;
+    });
+
+    song.addEventListener('ended', () => {
+      playPauseButton.innerHTML = '▶️';
+      musicNote.style.opacity = '0';
+    });
+
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+      document.querySelector('.container').classList.toggle('dark-mode');
+      document.querySelector('.music-player').classList.toggle('dark-mode');
+      document.querySelector('.dark-mode-button').classList.toggle('dark-mode');
+      const nowPlaying = document.querySelector('.now-playing');
+      nowPlaying.classList.toggle('dark-mode');
+      const photoAlbum = document.querySelector('.photo-album');
+      if (photoAlbum) {
+        photoAlbum.classList.toggle('dark-mode');
+      }
+    }
+  </script>
+
 </body>
 </html>
