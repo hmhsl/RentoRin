@@ -17,12 +17,17 @@
   <div class="heart small fast"></div>
   <div class="heart tiny medium"></div>
 </div>
+  <div class="music-player">
   <audio id="love-song" src="music/firstlove.mp3"></audio>
 
-<button class="music-button" onclick="document.getElementById('love-song').play();">
-  ⏯️ Play Our Song
-</button>
-<div>
+  <div class="controls">
+    <button onclick="playSong()">▶️</button>
+    <button onclick="pauseSong()">⏸️</button>
+    <button onclick="stopSong()">⏹️</button>
+  </div>
+
+  <input type="range" id="progress" value="0" max="100">
+</div>
   <div class="container">
     <header>
       <h1>Happy 1-Year Anniversary!</h1>
@@ -48,5 +53,32 @@
       <p>Made with love by Laurent</p>
     </footer>
   </div>
+  <script>
+const song = document.getElementById('love-song');
+const progress = document.getElementById('progress');
+
+function playSong() {
+  song.play();
+}
+
+function pauseSong() {
+  song.pause();
+}
+
+function stopSong() {
+  song.pause();
+  song.currentTime = 0;
+}
+
+song.addEventListener('timeupdate', () => {
+  const percentage = (song.currentTime / song.duration) * 100;
+  progress.value = percentage;
+});
+
+progress.addEventListener('input', () => {
+  const seekTime = (progress.value / 100) * song.duration;
+  song.currentTime = seekTime;
+});
+</script>
 </body>
 </html>
