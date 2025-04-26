@@ -58,3 +58,32 @@ footer {
   color: #aa4a70;
   margin-top: 3em;
 }
+
+.photo-album {
+  margin-top: 3em;
+}
+
+.photo-album h2 {
+  font-family: 'Shadows Into Light', cursive;
+  color: #ff6b81;
+  margin-bottom: 1em;
+}
+
+.album-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1em;
+  padding: 0 1em;
+}
+
+.album-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+.album-grid img:hover {
+  transform: scale(1.05);
+}
