@@ -18,13 +18,19 @@
   <div class="heart tiny medium"></div>
 </div>
   <div class="music-player">
+  <div class="now-playing">🎵 Now Playing: Our Song</div>
+
   <audio id="love-song" src="music/firstlove.mp3"></audio>
 
   <div class="controls">
-    <button onclick="playSong()">▶️</button>
-    <button onclick="pauseSong()">⏸️</button>
+    <button id="play-pause-button" onclick="togglePlayPause()">▶️</button>
     <button onclick="stopSong()">⏹️</button>
   </div>
+
+  <input type="range" id="progress" value="0" max="100">
+
+  <div class="music-note" id="music-note">🎶</div>
+</div>
 
   <input type="range" id="progress" value="0" max="100">
 </div>
