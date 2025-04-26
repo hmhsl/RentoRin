@@ -59,21 +59,29 @@
       <p>Made with love by Laurent</p>
     </footer>
   </div>
-  <script>
+<script>
 const song = document.getElementById('love-song');
 const progress = document.getElementById('progress');
+const playPauseButton = document.getElementById('play-pause-button');
+const musicNote = document.getElementById('music-note');
 
-function playSong() {
-  song.play();
-}
-
-function pauseSong() {
-  song.pause();
+function togglePlayPause() {
+  if (song.paused) {
+    song.play();
+    playPauseButton.innerHTML = '⏸️'; // Change to pause icon
+    musicNote.style.opacity = '1'; // Show the floating note
+  } else {
+    song.pause();
+    playPauseButton.innerHTML = '▶️'; // Change back to play icon
+    musicNote.style.opacity = '0'; // Hide the floating note
+  }
 }
 
 function stopSong() {
   song.pause();
   song.currentTime = 0;
+  playPauseButton.innerHTML = '▶️'; // Reset to play icon
+  musicNote.style.opacity = '0'; // Hide the floating note
 }
 
 song.addEventListener('timeupdate', () => {
@@ -84,6 +92,11 @@ song.addEventListener('timeupdate', () => {
 progress.addEventListener('input', () => {
   const seekTime = (progress.value / 100) * song.duration;
   song.currentTime = seekTime;
+});
+
+song.addEventListener('ended', () => {
+  playPauseButton.innerHTML = '▶️'; // Reset button when song ends
+  musicNote.style.opacity = '0'; // Hide the note
 });
 </script>
 </body>
