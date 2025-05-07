@@ -30,8 +30,6 @@
     <div class="heart tiny medium"></div>
   </div>
 
-  <button class="dark-mode-button" onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
-
   <div class="music-player">
     <div class="now-playing">🎵 Now Playing: Our Song</div>
     <audio id="love-song" src="music/your-song.mp3" loop></audio>
@@ -118,19 +116,6 @@
       musicNote.style.opacity = '0';
     });
 
-    function toggleDarkMode() {
-      document.body.classList.toggle('dark-mode');
-      document.querySelector('.container').classList.toggle('dark-mode');
-      document.querySelector('.music-player').classList.toggle('dark-mode');
-      document.querySelector('.dark-mode-button').classList.toggle('dark-mode');
-      const nowPlaying = document.querySelector('.now-playing');
-      nowPlaying.classList.toggle('dark-mode');
-      const photoAlbum = document.querySelector('.photo-album');
-      if (photoAlbum) {
-        photoAlbum.classList.toggle('dark-mode');
-      }
-    }
-
     function openGift() {
       const box = document.getElementById('gift-box');
       box.classList.add('open');
@@ -147,7 +132,6 @@
       }, 800);
     }
 
-    // Confetti
     function startConfetti() {
       const canvas = document.getElementById('confetti-canvas');
       canvas.width = window.innerWidth;

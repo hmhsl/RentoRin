@@ -1,11 +1,128 @@
 
-/* Only includes the new or updated styles */
-
 body {
   margin: 0;
   font-family: 'Lora', serif;
   background: #fff0f6;
-  overflow-x: hidden;
+  color: #333;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2em;
+  text-align: center;
+}
+
+header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8em;
+  color: #ff6b81;
+}
+
+header p {
+  font-size: 1.2em;
+  color: #aa4a70;
+  margin-bottom: 1.5em;
+}
+
+.intro p {
+  font-size: 1.1em;
+  line-height: 1.6em;
+}
+
+.nav-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin: 2em 0;
+}
+.nav-buttons a {
+  background: #ffe2ec;
+  padding: 0.8em 1.2em;
+  border-radius: 12px;
+  color: #d6336c;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+.nav-buttons a:hover {
+  background: #ffd1e3;
+  transform: translateY(-2px);
+}
+
+.photo-album h2 {
+  font-family: 'Playfair Display', serif;
+  color: #ff6b81;
+  margin-bottom: 1em;
+}
+.album-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1em;
+}
+.album-grid img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+.album-grid img:hover {
+  transform: scale(1.05);
+}
+
+footer {
+  font-size: 0.9em;
+  color: #aa4a70;
+  margin-top: 3em;
+}
+
+.music-player {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #ffe2ec;
+  padding: 15px 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 100;
+  font-family: 'Playfair Display', serif;
+}
+
+.now-playing {
+  font-size: 1em;
+  margin-bottom: 10px;
+  color: #d6336c;
+}
+
+.controls button {
+  background: #ff99ac;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px; height: 40px;
+  margin: 0 5px;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+.controls button:hover {
+  background: #ff6b81;
+}
+#progress {
+  margin-top: 10px;
+  width: 100%;
+}
+.music-note {
+  position: absolute;
+  bottom: 60px;
+  right: 10px;
+  font-size: 1.5em;
+  opacity: 0;
+  animation: floatNote 3s infinite;
+}
+@keyframes floatNote {
+  0% { transform: translateY(0); opacity: 0.7; }
+  50% { transform: translateY(-10px); opacity: 1; }
+  100% { transform: translateY(0); opacity: 0.7; }
 }
 
 #gift-overlay {
@@ -62,4 +179,14 @@ body {
   top: 0; left: 0;
   pointer-events: none;
   z-index: 1000;
+}
+
+.fade-in {
+  animation: fadeInAnimation ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimation {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
