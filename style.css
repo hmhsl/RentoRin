@@ -57,8 +57,9 @@ header p {
 }
 .album-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(4, 1fr); /* Force 4 items per row */
   gap: 1em;
+  justify-items: center;
 }
 .album-grid img {
   width: 100%;
