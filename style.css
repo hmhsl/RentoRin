@@ -1,315 +1,65 @@
-/* ======= BASE STYLES ======= */
+
+/* Only includes the new or updated styles */
+
 body {
   margin: 0;
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Lora', serif;
   background: #fff0f6;
-  color: #333;
+  overflow-x: hidden;
 }
 
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2em;
-  text-align: center;
-}
-
-/* ======= HEADER STYLES ======= */
-header h1 {
-  font-family: 'Shadows Into Light', cursive;
-  font-size: 2.8em;
-  color: #ff6b81;
-}
-
-header p {
-  font-size: 1.2em;
-  color: #aa4a70;
-  margin-bottom: 1.5em;
-}
-
-/* ======= INTRO SECTION ======= */
-.intro p {
-  font-size: 1.1em;
-  margin: 1em 0;
-  line-height: 1.6em;
-}
-
-/* ======= NAV BUTTONS ======= */
-.nav-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
-  margin: 2em 0;
-}
-
-.nav-buttons a {
-  background: #ffe2ec;
-  padding: 0.8em 1.2em;
-  border-radius: 12px;
-  color: #d6336c;
-  font-weight: bold;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-}
-
-.nav-buttons a:hover {
-  background: #ffd1e3;
-  transform: translateY(-2px);
-}
-
-/* ======= PHOTO ALBUM ======= */
-.photo-album {
-  margin-top: 3em;
-}
-
-.photo-album h2 {
-  font-family: 'Shadows Into Light', cursive;
-  color: #ff6b81;
-  margin-bottom: 1em;
-}
-
-.album-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1em;
-  padding: 0 1em;
-}
-
-.album-grid img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease;
-}
-
-.album-grid img:hover {
-  transform: scale(1.05);
-}
-
-/* ======= FOOTER ======= */
-footer {
-  font-size: 0.9em;
-  color: #aa4a70;
-  margin-top: 3em;
-}
-
-/* ======= FLOATING HEARTS ======= */
-.hearts {
+#gift-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 0;
-}
-
-.heart {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background-color: #ff6b81;
-  opacity: 0.7;
-  transform: rotate(45deg);
-  animation: float 10s infinite ease-in;
-}
-
-.heart::before,
-.heart::after {
-  content: "";
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background-color: #ff6b81;
-  border-radius: 50%;
-}
-
-.heart::before {
-  top: -10px;
-  left: 0;
-}
-
-.heart::after {
-  left: -10px;
-  top: 0;
-}
-
-@keyframes float {
-  0% {
-    bottom: -10%;
-    left: calc(10% + 80px);
-    opacity: 0;
-    transform: rotate(45deg) scale(0.5);
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    bottom: 110%;
-    left: calc(50% + 80px);
-    opacity: 0;
-    transform: rotate(45deg) scale(1.2);
-  }
-}
-
-/* Heart Sizes */
-.heart.small {
-  width: 15px;
-  height: 15px;
-}
-.heart.medium {
-  width: 25px;
-  height: 25px;
-}
-.heart.large {
-  width: 35px;
-  height: 35px;
-}
-.heart.tiny {
-  width: 10px;
-  height: 10px;
-}
-
-/* Heart Speeds */
-.heart.slow {
-  animation-duration: 12s;
-}
-.heart.medium {
-  animation-duration: 9s;
-}
-.heart.fast {
-  animation-duration: 6s;
-}
-
-/* Heart Colors */
-.heart:nth-child(1) { background-color: #ff6b81; }
-.heart:nth-child(2) { background-color: #ffa6b7; }
-.heart:nth-child(3) { background-color: #ffc2d1; }
-.heart:nth-child(4) { background-color: #ff8fab; }
-.heart:nth-child(5) { background-color: #ffd1dc; }
-.heart:nth-child(6) { background-color: #ff99ac; }
-.heart:nth-child(7) { background-color: #ffe2ec; }
-
-/* ======= MUSIC PLAYER ======= */
-.music-player {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #ffe2ec;
-  padding: 15px 20px;
-  border-radius: 20px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  z-index: 100;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: #ffe2ec;
+  z-index: 9999;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  font-family: 'Shadows Into Light', cursive;
+  transition: opacity 1s ease;
 }
 
-.now-playing {
-  font-size: 1em;
-  margin-bottom: 10px;
+.gift-box {
+  background: white;
+  padding: 3em;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  transform: scale(1);
+  transition: transform 0.6s ease;
+}
+.gift-box.open {
+  transform: scale(1.15) rotateX(20deg);
+}
+
+.gift-box p {
+  font-family: 'Playfair Display', serif;
   color: #d6336c;
-}
-
-.controls button {
-  background: #ff99ac;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  margin: 0 5px;
-  font-size: 1.2em;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.controls button:hover {
-  background: #ff6b81;
-}
-
-#progress {
-  margin-top: 10px;
-  width: 100%;
-  cursor: pointer;
-}
-
-.music-note {
-  position: absolute;
-  bottom: 60px;
-  right: 10px;
   font-size: 1.5em;
-  opacity: 0;
-  animation: floatNote 3s infinite;
 }
 
-@keyframes floatNote {
-  0% { transform: translateY(0); opacity: 0.7; }
-  50% { transform: translateY(-10px); opacity: 1; }
-  100% { transform: translateY(0); opacity: 0.7; }
-}
-
-/* ======= DARK MODE ======= */
-body.dark-mode {
-  background: #1e1e2f;
-  color: #f5f5f5;
-}
-
-.container.dark-mode,
-.music-player.dark-mode,
-.photo-album.dark-mode {
-  background: #2c2c3e;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
-
-.music-player.dark-mode button,
-.dark-mode-button.dark-mode {
-  background: #ff6b81;
-}
-
-.now-playing.dark-mode {
-  color: #ffe2ec;
-}
-
-/* ======= DARK MODE TOGGLE BUTTON ======= */
-.dark-mode-button {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background: #ff99ac;
+.gift-box button {
+  background-color: #ff99ac;
   color: white;
   border: none;
   border-radius: 20px;
-  padding: 10px 20px;
-  font-family: 'Shadows Into Light', cursive;
-  font-size: 1em;
+  padding: 10px 25px;
+  font-size: 1.1em;
   cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  z-index: 200;
-  transition: background 0.3s ease;
+}
+.gift-box button:hover {
+  background-color: #ff6b81;
 }
 
-.dark-mode-button:hover {
-  background: #ff6b81;
+.ribbon {
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
 }
 
-/* ======= FADE-IN ENTRANCE ======= */
-.fade-in {
-  animation: fadeInAnimation ease 2s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-}
-
-@keyframes fadeInAnimation {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+#confetti-canvas {
+  position: fixed;
+  top: 0; left: 0;
+  pointer-events: none;
+  z-index: 1000;
 }
