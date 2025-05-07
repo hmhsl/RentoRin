@@ -4,83 +4,492 @@
 <meta charset='UTF-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0'>
 <title>Our Date Logbook</title>
+<link href='https://fonts.googleapis.com/css2?family=Lora&family=Playfair+Display:wght@500&display=swap' rel='stylesheet'>
 <style>
-body { font-family: 'Lora', serif; background: #fff0f6; color: #333; padding: 2em; }
-h1 { color: #ff6b81; font-family: 'Playfair Display', serif; }
-h2 { color: #d6336c; font-family: 'Playfair Display', serif; margin-top: 2em; }
-.log-entry { margin-bottom: 3em; }
-.caption { margin-bottom: 1em; font-style: italic; font-size: 1.1em; }
-.photo-row { display: flex; flex-wrap: wrap; gap: 1em; justify-content: flex-start; }
-.photo-row img { width: calc(33.333% - 1em); border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+body { font-family: 'Lora', serif; background: #fffafc; color: #333; padding: 2em; }
+h1 { color: #ff6b81; font-family: 'Playfair Display', serif; font-size: 2.5em; margin-bottom: 0.5em; }
+h2 { color: #ff85a2; font-family: 'Playfair Display', serif; margin-top: 2em; border-bottom: 1px solid #ffcbd3; padding-bottom: 0.3em; }
+h3 { color: #d6336c; margin-bottom: 0.2em; font-size: 1.3em; }
+.log-entry { margin-bottom: 2em; background: #fff0f6; padding: 1em; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+.caption { font-style: italic; font-size: 1.05em; margin-bottom: 0.5em; }
+.photo-row { display: flex; flex-wrap: wrap; gap: 1em; justify-content: flex-start; margin-top: 2em; }
+.photo-row img { width: calc(33.333% - 1em); border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.08); transition: transform 0.3s ease; }
+.photo-row img:hover { transform: scale(1.03); }
 @media (max-width: 768px) { .photo-row img { width: 100%; } }
+#top-btn { position: fixed; bottom: 20px; right: 20px; background: #ff99ac; color: white; border: none; padding: 10px 18px; border-radius: 25px; cursor: pointer; box-shadow: 0 4px 8px rgba(0,0,0,0.2); font-family: 'Playfair Display', serif; font-size: 1em; display: none; z-index: 1000; }
+#top-btn:hover { background: #ff6b81; }
 </style>
 </head>
 <body>
-<h1>📖 Our Date Logbook</h1>
+<h1>💖 Our Date Logbook</h1>
+<a id='top'></a>
+<h2>March 2024</h2>
 <div class='log-entry'>
-<h2>May 25, 2024</h2>
+<h3>March 25, 2024</h3>
+<div class='caption'>We met in Korea!</div>
+</div>
+<h2>April 2024</h2>
+<div class='log-entry'>
+<h3>April 03, 2024</h3>
+<div class='caption'>Cherry blossoms bloom in Seoul, our first time viewing together</div>
+</div>
+<div class='log-entry'>
+<h3>April 06, 2024</h3>
+<div class='caption'>Cafe hopping around Ikseon-dong; sunset cherry blossom pics</div>
+</div>
+<div class='log-entry'>
+<h3>April 06, 2024</h3>
+<div class='caption'>First date viewing cherry blossoms!</div>
+</div>
+<div class='log-entry'>
+<h3>April 08, 2024</h3>
+<div class='caption'>We decided to try long distance</div>
+</div>
+<h2>May 2024</h2>
+<div class='log-entry'>
+<h3>May 23, 2024</h3>
+<div class='caption'>Celebrated your 21st birthday!</div>
+</div>
+<div class='log-entry'>
+<h3>May 24, 2024</h3>
+<div class='caption'>Tried the salmon place in Ikseondong</div>
+</div>
+<div class='log-entry'>
+<h3>May 25, 2024</h3>
 <div class='caption'>Yeouido Park and Mall date</div>
-<div class='photo-row'>
-<img src='images/logbook/IMG_7856.JPG' alt='Photo from 2024-05-25'>
-</div></div>
+</div>
 <div class='log-entry'>
-<h2>May 27, 2024</h2>
+<h3>May 27, 2024</h3>
 <div class='caption'>BIG date day, Insadong, cafe hopping, Han River with friends</div>
-<div class='photo-row'>
-<img src='images/logbook/IMG_7884.JPG' alt='Photo from 2024-05-27'>
-</div></div>
+</div>
 <div class='log-entry'>
-<h2>June 09, 2024</h2>
+<h3>May 28, 2024</h3>
+<div class='caption'>I went with you to Yonsei and we ate foodies there</div>
+</div>
+<div class='log-entry'>
+<h3>May 29, 2024</h3>
+<div class='caption'>Yeonnamdong PASTA and Wanpo, last date for the trip (not for long!)</div>
+</div>
+<h2>June 2024</h2>
+<div class='log-entry'>
+<h3>June 06, 2024</h3>
+<div class='caption'>I came to surprised you at busking, but you lowkey expected it</div>
+</div>
+<div class='log-entry'>
+<h3>June 07, 2024</h3>
+<div class='caption'>CRAB day it was so salty and fishy</div>
+</div>
+<div class='log-entry'>
+<h3>June 09, 2024</h3>
 <div class='caption'>First day in JPN together with friends! (Shirohige, Yotsuya, Minato)</div>
-<div class='photo-row'>
-<img src='images/logbook/IMG_0349.JPG' alt='Photo from 2024-06-09'>
-</div></div>
+</div>
 <div class='log-entry'>
-<h2>June 11, 2024</h2>
+<h3>June 10, 2024</h3>
+<div class='caption'>Kamakura date and we fell asleep on the sand</div>
+</div>
+<div class='log-entry'>
+<h3>June 11, 2024</h3>
 <div class='caption'>Shibuya Sky!</div>
-<div class='photo-row'>
-<img src='images/logbook/20240611_121616_Original.JPG' alt='Photo from 2024-06-11'>
-</div></div>
+</div>
 <div class='log-entry'>
-<h2>June 12, 2024</h2>
+<h3>June 12, 2024</h3>
 <div class='caption'>Kyoto and dressing up :) we had really good drinks/okonomiyaki this day</div>
-<div class='photo-row'>
-<img src='images/logbook/20240612_153452_Original.jpg' alt='Photo from 2024-06-12'>
-</div></div>
+</div>
 <div class='log-entry'>
-<h2>June 17, 2024</h2>
+<h3>June 14, 2024</h3>
+<div class='caption'>This is the day we reunited after getting split up in Kyoto, we bought Onitsukas in Ginza, and I got a migraine RIP</div>
+</div>
+<div class='log-entry'>
+<h3>June 15, 2024</h3>
+<div class='caption'>We went off on our own in Tokyo and we went to a hedgehog/otter cafe. They kept crawling up on you but it was really cute.</div>
+</div>
+<div class='log-entry'>
+<h3>June 17, 2024</h3>
 <div class='caption'>Returned to Seoul and we had our little river light show date </div>
-<div class='photo-row'>
-<img src='images/logbook/IMG_0484.JPG' alt='Photo from 2024-06-17'>
-</div></div>
+</div>
 <div class='log-entry'>
-<h2>December 26, 2024</h2>
+<h3>June 19, 2024</h3>
+<div class='caption'>I... missed my flight.. and we went do Kyonchon at like 3AM?? We also went suitcase hunting...</div>
+</div>
+<h2>July 2024</h2>
+<div class='log-entry'>
+<h3>July 02, 2024</h3>
+<div class='caption'>MY CAR EXPLODED</div>
+</div>
+<div class='log-entry'>
+<h3>July 05, 2024</h3>
+<div class='caption'>We had our first date in America! We walked Taro around Mountain View and fed him whipped cream</div>
+</div>
+<div class='log-entry'>
+<h3>July 06, 2024</h3>
+<div class='caption'>We went to DCI West together and I got pulled over (yikes) with a full car (double yikes). My parents saw us walking into Top Cafe..</div>
+</div>
+<div class='log-entry'>
+<h3>July 07, 2024</h3>
+<div class='caption'>Saratoga Brunch that was 10/10</div>
+</div>
+<div class='log-entry'>
+<h3>July 08, 2024</h3>
+<div class='caption'>Went to SLO and got POPEYES</div>
+</div>
+<div class='log-entry'>
+<h3>July 11, 2024</h3>
+<div class='caption'>I think this is around when your skin started to get a little bad but we got some sequel tea and called it a day</div>
+</div>
+<div class='log-entry'>
+<h3>July 13, 2024</h3>
+<div class='caption'>Had an LA date and went to Brandy... and Edikted...then we got Oakobing at night..</div>
+</div>
+<div class='log-entry'>
+<h3>July 22, 2024</h3>
+<div class='caption'>We tried going to the beach but it was cloudy so we got some lobster sandoooosssss</div>
+</div>
+<div class='log-entry'>
+<h3>July 26, 2024</h3>
+<div class='caption'>Date night at the Little Door in LA, it was cute and the food was good 9/10</div>
+</div>
+<div class='log-entry'>
+<h3>July 27, 2024</h3>
+<div class='caption'>OC Fair and we got our ferris wheel moment!</div>
+</div>
+<div class='log-entry'>
+<h3>July 28, 2024</h3>
+<div class='caption'>We got brunch with my parents and my dad gave us the talk and the fan 😭</div>
+</div>
+<div class='log-entry'>
+<h3>July 29, 2024</h3>
+<div class='caption'>We got ACTIVE this day, went on a like 3 mile hike and got taco tuesday</div>
+</div>
+<h2>August 2024</h2>
+<div class='log-entry'>
+<h3>August 02, 2024</h3>
+<div class='caption'>Amtrak'd up to SJ bc my car died</div>
+</div>
+<div class='log-entry'>
+<h3>August 15, 2024</h3>
+<div class='caption'>Went to Ktown and we got Honeymee and Pigya</div>
+</div>
+<div class='log-entry'>
+<h3>August 16, 2024</h3>
+<div class='caption'>We went BACK to Ktown and you came with me and my dad to haggle my new Subaru</div>
+</div>
+<div class='log-entry'>
+<h3>August 18, 2024</h3>
+<div class='caption'>Went to cat cafe in Stanford with your friend </div>
+</div>
+<div class='log-entry'>
+<h3>August 21, 2024</h3>
+<div class='caption'>Ice skating day and I ate so much ice....</div>
+</div>
+<div class='log-entry'>
+<h3>August 24, 2024</h3>
+<div class='caption'>I came to Chicago/Champy with you and we moved you in, we saw that strange animal by the river at night that</div>
+</div>
+<div class='log-entry'>
+<h3>August 29, 2024</h3>
+<div class='caption'>We went to Suzu and you got your lifetime supply of wipes LOL</div>
+</div>
+<div class='log-entry'>
+<h3>August 31, 2024</h3>
+<div class='caption'>Chicago day with Vi and we did so much eating this day</div>
+</div>
+<h2>September 2024</h2>
+<div class='log-entry'>
+<h3>September 06, 2024</h3>
+<div class='caption'>Vince and Vi came to Champy and we had all you can eat sushi and watched scary movie..</div>
+</div>
+<div class='log-entry'>
+<h3>September 07, 2024</h3>
+<div class='caption'>Northern Cuisine and we went on the spinny thing in the park nearby too many times</div>
+</div>
+<div class='log-entry'>
+<h3>September 28, 2024</h3>
+<div class='caption'>We had a little friends day in Santa Monica/Ktown and we went to the Korea festival thing where you did the buldak challenge</div>
+</div>
+<div class='log-entry'>
+<h3>September 29, 2024</h3>
+<div class='caption'>Brunch in Studio City w Vi and Henrix and then Awan ice cream :p</div>
+</div>
+<h2>October 2024</h2>
+<div class='log-entry'>
+<h3>October 01, 2024</h3>
+<div class='caption'>We celebrated me bday cause you had to leave the next day and you gave me the sweetest gift I think I've ever gotten in my life</div>
+</div>
+<div class='log-entry'>
+<h3>October 18, 2024</h3>
+<div class='caption'>I came to see u perform in Champaign!! You killed it on stage and I got a little drunk in the crowd watching u</div>
+</div>
+<div class='log-entry'>
+<h3>October 19, 2024</h3>
+<div class='caption'>Fall pumpkin patch date! We also bought like 10 apples I think and saw some goats</div>
+</div>
+<div class='log-entry'>
+<h3>October 20, 2024</h3>
+<div class='caption'>I came to see u at work and then I went back home to SJ</div>
+</div>
+<div class='log-entry'>
+<h3>October 25, 2024</h3>
+<div class='caption'>Not even like a week later you came to LA and we went to an arcade and got drunk at ChiChis LOL</div>
+</div>
+<div class='log-entry'>
+<h3>October 26, 2024</h3>
+<div class='caption'>First rave togethar (Escape) and we finished like an entire pack of edibles by ourselves that didnt do much</div>
+</div>
+<div class='log-entry'>
+<h3>October 28, 2024</h3>
+<div class='caption'>Thai Market and Brandy and then I sent you homee</div>
+</div>
+<h2>November 2024</h2>
+<div class='log-entry'>
+<h3>November 23, 2024</h3>
+<div class='caption'>Gryffn and Zhangliang before coming back to the Bay for thanksgiving yay</div>
+</div>
+<div class='log-entry'>
+<h3>November 25, 2024</h3>
+<div class='caption'>This was the day that your mom came home when I was sleeping in your massage chair and I had to secret spy out of your house</div>
+</div>
+<div class='log-entry'>
+<h3>November 27, 2024</h3>
+<div class='caption'>Went to the mall and Pho SJ with Vi</div>
+</div>
+<h2>December 2024</h2>
+<div class='log-entry'>
+<h3>December 12, 2024</h3>
+<div class='caption'>First day of our winter Japan trip!! We did so much this day its hard to fit it but we got matcha, got your nails done, went to Pokemon Center, and got drunk </div>
+</div>
+<div class='log-entry'>
+<h3>December 13, 2024</h3>
+<div class='caption'>Sukiyaki, Blue Bottle, and a lotta window shopping</div>
+</div>
+<div class='log-entry'>
+<h3>December 14, 2024</h3>
+<div class='caption'>TeamLabs, Toyosu, and LuluLemoooon</div>
+</div>
+<div class='log-entry'>
+<h3>December 15, 2024</h3>
+<div class='caption'>This was a pretty special day to me that we got to spend together in Yokohama and Chinatown and we went to an animal cafe!</div>
+</div>
+<div class='log-entry'>
+<h3>December 16, 2024</h3>
+<div class='caption'>Our first DisneySea together!</div>
+</div>
+<div class='log-entry'>
+<h3>December 17, 2024</h3>
+<div class='caption'>Went to the Dior pop-up in Roppongi and went down to Osaka</div>
+</div>
+<div class='log-entry'>
+<h3>December 18, 2024</h3>
+<div class='caption'>Found this chinese-speaking tea shop near our hotel and bought pokemon cards</div>
+</div>
+<div class='log-entry'>
+<h3>December 19, 2024</h3>
+<div class='caption'>Day trip in Kyoto and we had this really pretty and good warabi mochi</div>
+</div>
+<div class='log-entry'>
+<h3>December 20, 2024</h3>
+<div class='caption'>First time in Hokkaido together! We found a YUM bakery and went Miffy shopping!</div>
+</div>
+<div class='log-entry'>
+<h3>December 21, 2024</h3>
+<div class='caption'>We went to Biei on a chinese tourist bus and then it caught on fire and we were stranded for 2 hours ad ended up freezing and thugging it out with some new friends that day</div>
+</div>
+<div class='log-entry'>
+<h3>December 22, 2024</h3>
+<div class='caption'>We went to Sapporo and walked around a lot and then we got in a fight but we made up because it was snowing and really pretty</div>
+</div>
+<div class='log-entry'>
+<h3>December 23, 2024</h3>
+<div class='caption'>Our first time in Niseko together! I sprained my thumb because I kept going down a black diamond and we experienced the JaPOW</div>
+</div>
+<div class='log-entry'>
+<h3>December 24, 2024</h3>
+<div class='caption'>Full day of skiing and snowboarding and then we got If... for dinner because she gave us the super secret opening hours</div>
+</div>
+<div class='log-entry'>
+<h3>December 25, 2024</h3>
+<div class='caption'>OUR FIRST CHRISTMAS TOGETHER we left Niseko</div>
+</div>
+<div class='log-entry'>
+<h3>December 26, 2024</h3>
 <div class='caption'>Went to Tower Records and then we missed flight :D</div>
-<div class='photo-row'>
-<img src='images/logbook/63FD24BE-92F6-49F0-82D1-28C876A6CCAB.jpg' alt='Photo from 2024-12-26'>
-</div></div>
+</div>
 <div class='log-entry'>
-<h2>March 19, 2025</h2>
+<h3>December 27, 2024</h3>
+<div class='caption'>CHINAAAAAAAAAA</div>
+</div>
+<h2>February 2025</h2>
+<div class='log-entry'>
+<h3>February 14, 2025</h3>
+<div class='caption'>Valentines Day date!! we had some yummy balklava and izakaya foods</div>
+</div>
+<div class='log-entry'>
+<h3>February 16, 2025</h3>
+<div class='caption'>Mini Santana Row date with oyster happy hour</div>
+</div>
+<h2>March 2025</h2>
+<div class='log-entry'>
+<h3>March 18, 2025</h3>
+<div class='caption'>We went back to Korea for an early 1-year celebration! Landed and got our fav pork kbbq</div>
+</div>
+<div class='log-entry'>
+<h3>March 19, 2025</h3>
 <div class='caption'>Visited the palace, wore hanbok, had yummy bakery food and first time Din Tai Fung in Seoul LOL</div>
-<div class='photo-row'>
-<img src='images/logbook/IMG_0103.JPG' alt='Photo from 2025-03-19'>
-</div></div>
+</div>
 <div class='log-entry'>
-<h2>March 21, 2025</h2>
+<h3>March 20, 2025</h3>
+<div class='caption'>Went to London Bagel, and Blue Bottle, and shopped a loowaat</div>
+</div>
+<div class='log-entry'>
+<h3>March 21, 2025</h3>
 <div class='caption'>LOTTE WORLD DAY</div>
-<div class='photo-row'>
-<img src='images/logbook/IMG_5780.JPG' alt='Photo from 2025-03-21'>
-</div></div>
+</div>
 <div class='log-entry'>
-<h2>March 23, 2025</h2>
+<h3>March 22, 2025</h3>
+<div class='caption'>Went to a random animal cafe that had furrets and lizards and a big dog, and we had two lunches this day and ended it with karaoke</div>
+</div>
+<div class='log-entry'>
+<h3>March 23, 2025</h3>
 <div class='caption'>We dressed up a bit and went to Hannamdaero/Itaewon and did a lot of cafe hopping</div>
-<div class='photo-row'>
-<img src='images/logbook/IMG_0605.JPG' alt='Photo from 2025-03-23'>
-</div></div>
+</div>
 <div class='log-entry'>
-<h2>April 12, 2025</h2>
+<h3>March 24, 2025</h3>
+<div class='caption'>Seoul Brandy and Daisque did a lot of shopping this day</div>
+</div>
+<div class='log-entry'>
+<h3>March 25, 2025</h3>
+<div class='caption'>We got bingsoo, and did some photobooths for our last day in Korea</div>
+</div>
+<h2>April 2025</h2>
+<div class='log-entry'>
+<h3>April 12, 2025</h3>
 <div class='caption'>I rented a car and came to see u in Champy because I was in Ohio for WGI and we went to Chicago for your dance workshop thang </div>
+</div>
+<div class='log-entry'>
+<h3>April 13, 2025</h3>
+<div class='caption'>Cherry blossoms in champy!</div>
+</div>
+<h2>May 2025</h2>
+<div class='log-entry'>
+<h3>May 08, 2025</h3>
+<div class='caption'>nan</div>
+</div>
+<div class='log-entry'>
+<h3>May 09, 2025</h3>
+<div class='caption'>nan</div>
+</div>
+<div class='log-entry'>
+<h3>May 10, 2025</h3>
+<div class='caption'>nan</div>
+</div>
+<div class='log-entry'>
+<h3>May 11, 2025</h3>
+<div class='caption'>nan</div>
+</div>
+<div class='log-entry'>
+<h3>May 12, 2025</h3>
+<div class='caption'>nan</div>
+</div>
+<h2>📸 All Memories in Photos</h2>
 <div class='photo-row'>
-<img src='images/logbook/IMG_0751.JPG' alt='Photo from 2025-04-12'>
-</div></div>
+<img src='images/logbook/20240611_121616_Original.JPG' alt='Memory photo'>
+<img src='images/logbook/20240612_153452_Original.jpg' alt='Memory photo'>
+<img src='images/logbook/61AD8D7D-6BE6-47E5-A47C-BDBF0488C541.JPG' alt='Memory photo'>
+<img src='images/logbook/63FD24BE-92F6-49F0-82D1-28C876A6CCAB.jpg' alt='Memory photo'>
+<img src='images/logbook/74202118720__7A5EFC4E-53C3-4088-BF98-C74665A505D0.jpg' alt='Memory photo'>
+<img src='images/logbook/74681635656__0E69E548-DEEF-441A-8E30-2CC06B6E5024.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_0052.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_0085.JPG' alt='Memory photo'>
+<img src='images/logbook/IMG_0103.JPG' alt='Memory photo'>
+<img src='images/logbook/IMG_0112.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_0151.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_0170.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_0282.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_0306.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_0349.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_0380.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_0385.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_0391.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_0405.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_0484.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_0605.JPG' alt='Memory photo'>
+<img src='images/logbook/IMG_0751.JPG' alt='Memory photo'>
+<img src='images/logbook/IMG_0917.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_0972.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_1004.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_1372.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_1416.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_1428.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_1474.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_1477.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_1526.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_1562.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_1750.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_1809.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_1843.JPG' alt='Memory photo'>
+<img src='images/logbook/IMG_1851.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_1863.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_1898.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_2240.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_2253.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_2280.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_2312.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_2350.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_2400.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_2502.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_2518.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_2816.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_2826.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_2865.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_3145.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_3305.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_3412.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_3475.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_3550.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_4017.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_4042.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_4215.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_4366.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_4383.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_4452.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_4580.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_4623.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_4638.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_4641.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_4671.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_4696.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_4732.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_4867.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_4903.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_5063.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_5142.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_5325.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_5666.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_5716.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_5733.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_5780.JPG' alt='Memory photo'>
+<img src='images/logbook/IMG_5895.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_6015.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_6080.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_6129.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_6189.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_6214.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_6496.jpg' alt='Memory photo'>
+<img src='images/logbook/IMG_7856.JPG' alt='Memory photo'>
+<img src='images/logbook/IMG_7884.JPG' alt='Memory photo'>
+<img src='images/logbook/IMG_8981.jpg' alt='Memory photo'>
+</div>
+<button id='top-btn' onclick="window.scrollTo({top: 0, behavior: 'smooth'});">⬆ Back to Top</button>
+<button id='top-btn' onclick="window.scrollTo({top: 0, behavior: 'smooth'});">⬆ Back to Top</button>
+
+<script>
+const topBtn = document.getElementById('top-btn');
+window.onscroll = function() {
+  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+    topBtn.style.display = 'block';
+  } else {
+    topBtn.style.display = 'none';
+  }
+};
+</script>
+
 </body></html>
